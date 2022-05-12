@@ -9,7 +9,7 @@ export const CompleteDiv = styled.div`
     text-align: center;    
     line-height: 1.5em;
     font-family: sans-serif;
-    height: 100vh;
+    min-height: 100vh;
 
     @media(max-width: 1359px){
         height: 180vh;
@@ -29,5 +29,5 @@ export const DataDiv = styled.div`
 `;
 
 export const ButtonDetails = styled.button`
-    padding: 0.184em;
+    padding: 0.14em;
 `;

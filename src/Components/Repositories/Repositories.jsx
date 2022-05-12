@@ -1,10 +1,12 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, {useContext, useEffect} from "react";
+import { Link } from 'react-router-dom';
 import { ButtonDetails, CompleteDiv, DataDiv, TableTitle } from "./styles";
 import { Context } from "../../Contexts/Context";
 
 function Repositories() {
     const {dados} = useContext(Context);
-    const [repos, setRepos] = useState(null);
+    const {repos, setRepos} = useContext(Context);
+    const {setReposName} = useContext(Context);
 
     useEffect(() => {
 
@@ -39,7 +41,9 @@ function Repositories() {
     function ListRepositoriesDetails(element){
       return(
         <DataDiv>
-            <ButtonDetails>Detalhes</ButtonDetails>
+            <Link to={`/userRepositories/${dados.login}/${element.name}`}>            
+            <ButtonDetails onClick={() => setReposName(element.full_name)}>Detalhes</ButtonDetails>
+            </Link>
         </DataDiv>
       );
     }

@@ -34,7 +34,6 @@ function Home(){
   
           async function fetchAPI() {
             const res = await fetch(
-                // we'll update the KEYHERE soon!
                 `https://api.github.com/users/`+ userSearched
             );
   
