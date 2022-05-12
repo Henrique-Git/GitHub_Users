@@ -9,7 +9,7 @@ export const Body = styled.section`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
     @media(max-width: 1359px){
         line-height: 4em;
     }
@@ -45,25 +45,24 @@ export const SubTitle = styled.p`
 export const Input = styled.input`
     width: 40vw;
     text-align: center;
-    padding: 0.3em;
+    padding: 0.4em;
     margin: 1em;
     border: none;
     border-radius: 0.5em;
+    font-size: 1em;
+    font-weight: bold;
 `;
 
 export const Button = styled.button`
     cursor: pointer;
-    padding: 1em;
+    width: 15vw;
+    padding: 0.8em;
     font-weight: bold;
     font-size: 1em;
     border-radius: 1.5em;
     border: none;
-    color: white;
+    color: black;
     transition: 0.8s ease;
-
-    &:hover{
-        font-size: 1.1em
-    }
 
     @keyframes gradient {
         0% {
@@ -80,5 +79,44 @@ export const Button = styled.button`
     @media(max-width: 1359px){
         margin-top: 2em;
     }
-    
+`;
+
+export const UserData = styled.div`
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    padding: 0.5em;
+    margin: 1.5em;
+    border: 0.2em solid white;
+    border-radius: 1em;
+`;
+
+export const DivData = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 45%;
+`;
+
+export const DataItem = styled.p`
+    line-height: 2.5em;
+    font-weight: bold;
+`;
+
+export const AvatarImage = styled.img`
+    width: 30%;
+`;
+
+export const ReposButton = styled.button`
+    padding: 0.4em;
+    border: none;
+    border-radius: 0.5em;
+    width: 100%;
+    margin: 1em 0;
+    cursor: pointer;
+`;
+
+export const NoInformation = styled.p`
+    font-size: 1.3em;
+    line-height: 5em;
 `;

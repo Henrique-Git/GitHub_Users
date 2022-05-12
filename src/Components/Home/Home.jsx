@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import { Body, Button, Input, SubTitle, Title } from "./styles";
+import { AvatarImage, Body, Button, DataItem, DivData, Input, NoInformation, ReposButton, SubTitle, Title, UserData } from "./styles";
 import { Context } from '../../Contexts/Context'
 
 function Home(){
@@ -35,26 +35,28 @@ function Home(){
     function showData(){
         if(inputField !== null && dados !== null){
             return( 
-            <div>
-                <img src={dados.avatar_url} alt='Avatar do Github' />
-                <p>LOGIN: {dados.login}</p>
-                <p>NOME: {dados.name}</p>
-                <p>CIDADE: {dados.location}</p>
-                <p>BIO: {dados.bio}</p>
-                <p>E-MAIL: {dados.email}</p>
-                <p>Nº SEGUIDORES: {dados.followers}</p>
-                <p>Nº SEGUINDO: {dados.following}</p>
-            
-                <Link to={`/userRepositories/${dados.login}`}>
-                    <button>Repositórios</button>
-                </Link>     
-            </div>
+            <UserData>
+                <AvatarImage src={dados.avatar_url} alt='Avatar do Github' />
+                <DivData>
+                    <DataItem>LOGIN: {dados.login}</DataItem>
+                    <DataItem>NOME: {dados.name}</DataItem>
+                    <DataItem>CIDADE: {dados.location}</DataItem>
+                    <DataItem>BIO: {dados.bio}</DataItem>
+                    <DataItem>E-MAIL: {dados.email}</DataItem>
+                    <DataItem>Nº SEGUIDORES: {dados.followers}</DataItem>
+                    <DataItem>Nº SEGUINDO: {dados.following}</DataItem>
+                
+                    <Link to={`/userRepositories/${dados.login}`}>
+                        <ReposButton>Repositórios</ReposButton>
+                    </Link>
+                </DivData>
+            </UserData>
             )
         }
         else{
             return(
             <div>
-                <p>SEM INFORMAÇÃO</p> 
+                <NoInformation>SEM INFORMAÇÃO</NoInformation> 
             </div>
             )
         }
