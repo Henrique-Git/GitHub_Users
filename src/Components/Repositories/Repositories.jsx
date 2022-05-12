@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from "react";
-import { CompleteDiv, DataDiv, ExplanationDate, ExplanationDiv, ExplanationTitle, IFrame, Image, ImageDiv, Input } from "./styles";
+import { ButtonDetails, CompleteDiv, DataDiv, TableTitle } from "./styles";
 import { Context } from "../../Contexts/Context";
 
 function Repositories() {
@@ -20,42 +20,49 @@ function Repositories() {
       }
     },[]);
     
-    function ListRepositories(element){
+    function ListRepositoriesName(element){
       return(
-        <div>
-          {element.name}
-          {element.stargazers_count}
-        </div>
+        <DataDiv>
+            <p>{element.name}</p>
+        </DataDiv>
       );
     }
 
+    function ListRepositoriesStars(element){
+      return(
+        <DataDiv>
+            <p>{element.stargazers_count}</p>
+        </DataDiv>
+      );
+    }
 
-    /*async function searchDateEnter(e){
-      if(e.keyCode === 13){
-        const dateSearched = await inputField;
-
-        fetchAPI();
-
-        async function fetchAPI() {
-          const res = await fetch(
-              // we'll update the KEYHERE soon!
-              `https://api.nasa.gov/planetary/apod?api_key=FRUjXMxXvv7HpTI5fw0o3sQfm3N9qUy5WKMLXRbd&date=`+ dateSearched
-          );
-
-          const data = await res.json();
-          setDados(data);
-        }
-      }
-    }*/
+    function ListRepositoriesDetails(element){
+      return(
+        <DataDiv>
+            <ButtonDetails>Detalhes</ButtonDetails>
+        </DataDiv>
+      );
+    }
+    
     if (!repos) return <div />;
 
     return (
       <CompleteDiv>
-        <DataDiv>
-            {console.log(repos)}
-            {repos.map(ListRepositories)}
-        </DataDiv>
-        
+          <TableTitle>REPOSITÓRIOS</TableTitle>
+
+          <table>
+            <tr>
+              <th>Nome</th>
+              <th>Estrelas</th>
+              <th></th>
+            </tr>
+
+            <tr>
+              <td>{repos.map(ListRepositoriesName)}</td>
+              <td>{repos.map(ListRepositoriesStars)}</td>
+              <td>{repos.map(ListRepositoriesDetails)}</td>
+            </tr>
+          </table>
       </CompleteDiv>
     );
   }

@@ -111,6 +111,8 @@ export const ReposButton = styled.button`
     padding: 0.4em;
     border: none;
     border-radius: 0.5em;
+    font-size: 1em;
+    font-weight: bold;
     width: 100%;
     margin: 1em 0;
     cursor: pointer;

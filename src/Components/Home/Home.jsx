@@ -26,6 +26,24 @@ function Home(){
             }        
     }
 
+    async function searchUserEnter(e){
+        if(e.keyCode === 13){
+          const userSearched = await inputField;
+  
+          fetchAPI();
+  
+          async function fetchAPI() {
+            const res = await fetch(
+                // we'll update the KEYHERE soon!
+                `https://api.github.com/users/`+ userSearched
+            );
+  
+            const data = await res.json();
+            setDados(data);
+          }
+        }
+    }
+
     function setInput(e){
         if(e.target.value !== null){
             setInputField(e.target.value);
@@ -69,7 +87,7 @@ function Home(){
                 Busque aqui o usuário desejado!!!
             </SubTitle>
 
-            <Input type="text" onInput={(e) => setInput(e)} />
+            <Input type="text" onKeyDown={(e) => searchUserEnter(e)} onInput={(e) => setInput(e)} />
             
             <Button onClick={searchUser}>Buscar</Button>
 
