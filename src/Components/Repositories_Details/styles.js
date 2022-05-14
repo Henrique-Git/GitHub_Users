@@ -21,10 +21,16 @@ export const DetailsBox = styled.div`
     border-radius: 1em;
     padding: 3em;
     font-size: 1.3em;
+    max-width: 50%;
+    text-align: justify;
 `;
 
 export const DataItem = styled.p`
     line-height: 3em;
     font-weight: bold;
     color: white;
+
+    span{
+        cursor: pointer;
+    }
 `;

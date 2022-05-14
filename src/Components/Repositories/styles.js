@@ -28,6 +28,11 @@ export const DataDiv = styled.div`
     padding: 0.6em 4em;
 `;
 
+export const LinkGit = styled.p`
+    cursor: pointer;
+`;
+
 export const ButtonDetails = styled.button`
+    cursor: pointer;
     padding: 0.14em;
 `;

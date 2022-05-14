@@ -29,7 +29,7 @@ function Repositories_Details(){
                 <DataItem>DESCRIÇÃO: {details.description}</DataItem>
                 <DataItem>ESTRELAS: {details.stargazers_count}</DataItem>
                 <DataItem>LINGUAGENS UTILIZADAS: {details.language}</DataItem>
-                <DataItem>LINK: {details.url}</DataItem>
+                <DataItem>LINK: <span onClick={() => window.location.replace(`https://github.com/${reposName}`)}>{details.url}</span></DataItem>
             </DetailsBox>
         </DivData>
     );

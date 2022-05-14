@@ -1,6 +1,6 @@
 import React, {useContext, useEffect} from "react";
 import { Link } from 'react-router-dom';
-import { ButtonDetails, CompleteDiv, DataDiv, TableTitle } from "./styles";
+import { ButtonDetails, CompleteDiv, DataDiv, LinkGit, TableTitle } from "./styles";
 import { Context } from "../../Contexts/Context";
 
 function Repositories() {
@@ -38,11 +38,19 @@ function Repositories() {
       );
     }
 
+    function ListRepositoriesGit(element){
+      return(
+        <DataDiv>
+            <LinkGit onClick={() => window.location.replace(`https://github.com/${element.full_name}`)}>https://github.com/{element.full_name}</LinkGit>
+        </DataDiv>
+      );
+    }
+
     function ListRepositoriesDetails(element){
       return(
         <DataDiv>
             <Link to={`/userRepositories/${dados.login}/${element.name}`}>            
-            <ButtonDetails onClick={() => setReposName(element.full_name)}>Detalhes</ButtonDetails>
+                <ButtonDetails onClick={() => setReposName(element.full_name)}>Detalhes</ButtonDetails>
             </Link>
         </DataDiv>
       );
@@ -58,12 +66,14 @@ function Repositories() {
             <tr>
               <th>Nome</th>
               <th>Estrelas</th>
+              <th>GitHub</th>
               <th></th>
             </tr>
 
             <tr>
               <td>{repos.map(ListRepositoriesName)}</td>
               <td>{repos.map(ListRepositoriesStars)}</td>
+              <td>{repos.map(ListRepositoriesGit)}</td>
               <td>{repos.map(ListRepositoriesDetails)}</td>
             </tr>
           </table>
