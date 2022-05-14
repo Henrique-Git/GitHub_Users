@@ -91,20 +91,20 @@ export const UserData = styled.div`
     border-radius: 1em;
 `;
 
+export const AvatarImage = styled.img`
+    width: 30%;
+`;
+
 export const DivData = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 45%;
+    width: 50%;
 `;
 
 export const DataItem = styled.p`
     line-height: 2.5em;
     font-weight: bold;
-`;
-
-export const AvatarImage = styled.img`
-    width: 30%;
 `;
 
 export const ReposButton = styled.button`

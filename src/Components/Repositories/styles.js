@@ -21,11 +21,12 @@ export const TableTitle = styled.h1`
     margin: 1.8em 0;
 `;
 
-export const DataDiv = styled.div`
-    display: flex;
-    justify-content: center;
-    border: 0.1em solid white;
-    padding: 0.6em 4em;
+export const TableRow = styled.tr`
+    td{
+        border: 0.1em solid white;
+        padding: 0.8em 3em;
+    }
+
 `;
 
 export const LinkGit = styled.p`

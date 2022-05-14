@@ -1,6 +1,6 @@
 import React, {useContext, useEffect} from "react";
 import { Link } from 'react-router-dom';
-import { ButtonDetails, CompleteDiv, DataDiv, LinkGit, TableTitle } from "./styles";
+import { ButtonDetails, CompleteDiv, TableRow, LinkGit, TableTitle } from "./styles";
 import { Context } from "../../Contexts/Context";
 
 function Repositories() {
@@ -21,42 +21,33 @@ function Repositories() {
         setRepos(data);
       }
     },[]);
+
+    function sortRepositoriesStars(elementA, elementB){
+      return elementB.stargazers_count - elementA.stargazers_count 
+    }
     
-    function ListRepositoriesName(element){
+    function ListRepositories(element){
       return(
-        <DataDiv>
-            <p>{element.name}</p>
-        </DataDiv>
-      );
-    }
-
-    function ListRepositoriesStars(element){
-      return(
-        <DataDiv>
-            <p>{element.stargazers_count}</p>
-        </DataDiv>
-      );
-    }
-
-    function ListRepositoriesGit(element){
-      return(
-        <DataDiv>
-            <LinkGit onClick={() => window.location.replace(`https://github.com/${element.full_name}`)}>https://github.com/{element.full_name}</LinkGit>
-        </DataDiv>
-      );
-    }
-
-    function ListRepositoriesDetails(element){
-      return(
-        <DataDiv>
-            <Link to={`/userRepositories/${dados.login}/${element.name}`}>            
+        <TableRow>
+            <td>{element.name}</td>
+            <td>{element.stargazers_count}</td>
+            <td>
+              <LinkGit onClick={() => window.location.replace(`https://github.com/${element.full_name}`)}>
+                https://github.com/{element.full_name}
+              </LinkGit>
+            </td>
+            <td>
+              <Link to={`/userRepositories/${dados.login}/${element.name}`}>            
                 <ButtonDetails onClick={() => setReposName(element.full_name)}>Detalhes</ButtonDetails>
-            </Link>
-        </DataDiv>
-      );
+              </Link>
+            </td>
+        </TableRow>
+      )
     }
     
     if (!repos) return <div />;
+
+    repos.sort(sortRepositoriesStars)
 
     return (
       <CompleteDiv>
@@ -70,13 +61,10 @@ function Repositories() {
               <th></th>
             </tr>
 
-            <tr>
-              <td>{repos.map(ListRepositoriesName)}</td>
-              <td>{repos.map(ListRepositoriesStars)}</td>
-              <td>{repos.map(ListRepositoriesGit)}</td>
-              <td>{repos.map(ListRepositoriesDetails)}</td>
-            </tr>
+            {repos.map(ListRepositories)}
           </table>
+        
+
       </CompleteDiv>
     );
   }

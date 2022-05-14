@@ -23,7 +23,9 @@ function Home(){
   
                 const data = await res.json();
                 setDados(data);
-            }        
+            }
+        
+        showData();
     }
 
     async function searchUserEnter(e){
