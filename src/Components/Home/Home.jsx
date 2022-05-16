@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import { AvatarImage, Body, Button, DataItem, DivData, Input, NoInformation, ReposButton, SubTitle, Title, UserData } from "./styles";
+import { FaGithub } from "react-icons/fa";
+import { AvatarImage, Body, Button, DataItem, DivData, Input, NoInformation, ReposButton, Title, UserData } from "./Styles";
 import { Context } from '../../Contexts/Context'
 
 function Home(){
@@ -9,38 +10,50 @@ function Home(){
 
     useEffect(() => {
         document.title = "GitHub Buscar Usuários"
+
+        setDados(null);
      }, []);
 
     async function searchUser(){
         const userSearched = await inputField;
-  
+
+        if(userSearched === ''){
+            setDados(null);    
+        }
+
         fetchAPI();
     
             async function fetchAPI() {
-                const res = await fetch(
-                    `https://api.github.com/users/`+ userSearched
-                );
-  
-                const data = await res.json();
-                setDados(data);
+                if(userSearched !== null && userSearched !== ''){
+                    const res = await fetch(
+                        `https://api.github.com/users/`+ userSearched
+                    );
+    
+                    const data = await res.json();
+                    setDados(data);
+                }
             }
-        
-        showData();
     }
 
     async function searchUserEnter(e){
         if(e.keyCode === 13){
           const userSearched = await inputField;
-  
+
+          if(userSearched === ''){
+            setDados(null);    
+          }
+
           fetchAPI();
   
           async function fetchAPI() {
-            const res = await fetch(
-                `https://api.github.com/users/`+ userSearched
-            );
-  
-            const data = await res.json();
-            setDados(data);
+            if(userSearched !== null && userSearched !== ''){
+                const res = await fetch(
+                    `https://api.github.com/users/`+ userSearched
+                );
+
+                const data = await res.json();
+                setDados(data);
+            }
           }
         }
     }
@@ -52,7 +65,7 @@ function Home(){
     }
 
     function showData(){
-        if(inputField !== null && dados !== null){
+        if(inputField !== null && (dados !== null && dados !== '')){
             return( 
             <UserData>
                 <AvatarImage src={dados.avatar_url} alt='Avatar do Github' />
@@ -83,13 +96,10 @@ function Home(){
 
     return(
         <Body>
-            <Title>GitHub Users</Title>
-            <SubTitle>
-                Busque aqui o usuário desejado!!!
-            </SubTitle>
+            <Title><FaGithub /> GitHub Users</Title>
 
-            <Input type="text" onKeyDown={(e) => searchUserEnter(e)} onInput={(e) => setInput(e)} />
-            
+            <Input placeholder="Digite aqui um usuário" type="text" onKeyDown={(e) => searchUserEnter(e)} onInput={(e) => setInput(e)} />
+        
             <Button onClick={searchUser}>Buscar</Button>
 
             {showData()}

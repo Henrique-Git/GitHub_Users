@@ -1,8 +1,10 @@
 import React, {useContext ,useEffect, useState} from 'react';
-import { DivData, DataItem, Title, DetailsBox } from './styles'
+import ReturnArrow from "../ReturnArrow/ReturnArrow";
+import { RepositoriesDetailsDiv, DataItem, Title, DetailsBox } from './Styles'
 import { Context } from '../../Contexts/Context';
 
 function Repositories_Details(){
+    const {dados} = useContext(Context);
     const {reposName} = useContext(Context);
     const [details, setDetails] = useState('');
 
@@ -21,8 +23,8 @@ function Repositories_Details(){
     },[]);
 
     return(
-        <DivData>
-            <Title>DETALHES DO REPOSITÓRIO</Title>
+        <RepositoriesDetailsDiv>
+            <Title>DETALHES</Title>
 
             <DetailsBox>
                 <DataItem>NOME: {details.name}</DataItem>
@@ -31,7 +33,9 @@ function Repositories_Details(){
                 <DataItem>LINGUAGENS UTILIZADAS: {details.language}</DataItem>
                 <DataItem>LINK: <span onClick={() => window.location.replace(`https://github.com/${reposName}`)}>{details.url}</span></DataItem>
             </DetailsBox>
-        </DivData>
+
+            <ReturnArrow returnLink={`/userRepositories/${dados.login}`} />
+        </RepositoriesDetailsDiv>
     );
 }
 

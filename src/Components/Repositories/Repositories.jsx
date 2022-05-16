@@ -1,12 +1,23 @@
-import React, {useContext, useEffect} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import { Link } from 'react-router-dom';
-import { ButtonDetails, CompleteDiv, TableRow, LinkGit, TableTitle } from "./styles";
+import { FaStar } from "react-icons/fa"
+import Pagination from "../Pagination/Pagination";
+import { RepositoriesDiv, TableTitle, Table, TableRow, LinkGit, DetailsButton, ReturnButton } from "./Styles";
 import { Context } from "../../Contexts/Context";
+import ReturnArrow from "../ReturnArrow/ReturnArrow";
 
 function Repositories() {
-    const {dados} = useContext(Context);
+    const {dados, setDados} = useContext(Context);
     const {repos, setRepos} = useContext(Context);
     const {setReposName} = useContext(Context);
+    const [reposPerPage, setReposPerPage] = useState(8);
+    const [currentPage, setCurrentPage] = useState(0);
+
+    const pages = Math.ceil(repos.length / reposPerPage);
+    const startIndex = currentPage * reposPerPage;
+    const endIndex = startIndex + reposPerPage;
+    const sortedArray = repos.sort(sortRepositoriesStars)
+    const currentRepos = sortedArray.slice(startIndex, endIndex);
 
     useEffect(() => {
 
@@ -38,7 +49,7 @@ function Repositories() {
             </td>
             <td>
               <Link to={`/userRepositories/${dados.login}/${element.name}`}>            
-                <ButtonDetails onClick={() => setReposName(element.full_name)}>Detalhes</ButtonDetails>
+                <DetailsButton onClick={() => setReposName(element.full_name)}>Detalhes</DetailsButton>
               </Link>
             </td>
         </TableRow>
@@ -47,26 +58,26 @@ function Repositories() {
     
     if (!repos) return <div />;
 
-    repos.sort(sortRepositoriesStars)
-
     return (
-      <CompleteDiv>
-          <TableTitle>REPOSITÓRIOS</TableTitle>
+      <RepositoriesDiv>
+          <TableTitle>REPOSITÓRIOS DE {dados.login.toUpperCase()}</TableTitle>
 
-          <table>
-            <tr>
+          <Table>
+            <TableRow>
               <th>Nome</th>
-              <th>Estrelas</th>
+              <th><FaStar /></th>
               <th>GitHub</th>
               <th></th>
-            </tr>
+            </TableRow>
 
-            {repos.map(ListRepositories)}
-          </table>
+            {currentRepos.map(ListRepositories)}
+          </Table>
         
+          <Pagination pages={pages} setCurrentPage={setCurrentPage} />
 
-      </CompleteDiv>
+          <ReturnArrow returnLink={`/`} />
+      </RepositoriesDiv>
     );
-  }
+}
 
   export default Repositories;

@@ -1,10 +1,9 @@
 import styled from "styled-components";
 
 export const Body = styled.section`
-    background: black;
     color: white;
     font-family: sans-serif;
-    height: 100vh;
+    min-height: 95vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,26 +18,11 @@ export const Title = styled.h1`
     font-size: 2.3em;
     font-weight: bolder;
     text-align: center;
+    margin: 0.5em 0 0 0;
 
     @media(max-width: 1359px){
         font-size: 2em;
         width: 90%;
-    }
-`;
-
-export const SubTitle = styled.p`
-    font-size: 1.3em;
-    line-height: 2em;
-    width: 80%;
-    text-align: center;
-
-    @media(max-width: 1359px){
-        margin-top: 2em;
-        font-size: 1em;
-    }
-
-    @media(min-width: 300px) and (max-width: 900px){
-        text-align: justify;
     }
 `;
 
@@ -63,48 +47,40 @@ export const Button = styled.button`
     border: none;
     color: black;
     transition: 0.8s ease;
-
-    @keyframes gradient {
-        0% {
-            background-position: 0% 50%;
-        }
-        50% {
-            background-position: 100% 50%;
-        }
-        100% {
-            background-position: 0% 50%;
-        }
-    }
-
+    
     @media(max-width: 1359px){
         margin-top: 2em;
     }
 `;
 
 export const UserData = styled.div`
+    background: #292929;
     display: flex;
     justify-content: space-around;
+    height: 100%;
     width: 90%;
     padding: 0.5em;
-    margin: 1.5em;
+    margin: 1.2em;
     border: 0.2em solid white;
     border-radius: 1em;
 `;
 
 export const AvatarImage = styled.img`
+    border-radius: 100%;
     width: 30%;
 `;
 
-export const DivData = styled.div`
+export const DivData = styled.ul`
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 50%;
 `;
 
-export const DataItem = styled.p`
+export const DataItem = styled.li`
     line-height: 2.5em;
     font-weight: bold;
+    list-style: circle;
 `;
 
 export const ReposButton = styled.button`
@@ -120,5 +96,6 @@ export const ReposButton = styled.button`
 
 export const NoInformation = styled.p`
     font-size: 1.3em;
-    line-height: 5em;
+    font-weight: bold;
+    margin: 3em 0 0 0;
 `;
