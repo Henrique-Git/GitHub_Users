@@ -2,21 +2,21 @@ import React, {useContext, useEffect, useState} from "react";
 import { Link } from 'react-router-dom';
 import { FaStar } from "react-icons/fa"
 import Pagination from "../Pagination/Pagination";
-import { RepositoriesDiv, TableTitle, Table, TableRow, LinkGit, DetailsButton, ReturnButton } from "./Styles";
+import { RepositoriesDiv, TableTitle, Table, TableRow, LinkGit, DetailsButton} from "./Styles";
 import { Context } from "../../Contexts/Context";
 import ReturnArrow from "../ReturnArrow/ReturnArrow";
 
 function Repositories() {
-    const {dados, setDados} = useContext(Context);
+    const {dados} = useContext(Context);
     const {repos, setRepos} = useContext(Context);
     const {setReposName} = useContext(Context);
-    const [reposPerPage, setReposPerPage] = useState(8);
+    const [reposPerPage] = useState(8);
     const [currentPage, setCurrentPage] = useState(0);
 
     const pages = Math.ceil(repos.length / reposPerPage);
     const startIndex = currentPage * reposPerPage;
     const endIndex = startIndex + reposPerPage;
-    const sortedArray = repos.sort(sortRepositoriesStars)
+    const sortedArray = repos.sort(sortRepositoriesStarsDescendant)
     const currentRepos = sortedArray.slice(startIndex, endIndex);
 
     useEffect(() => {
@@ -33,8 +33,12 @@ function Repositories() {
       }
     },[]);
 
-    function sortRepositoriesStars(elementA, elementB){
+    function sortRepositoriesStarsDescendant(elementA, elementB){
       return elementB.stargazers_count - elementA.stargazers_count 
+    }
+
+    function sortRepositoriesStarsAscendant(elementA, elementB){
+      return elementA.stargazers_count - elementB.stargazers_count
     }
     
     function ListRepositories(element){

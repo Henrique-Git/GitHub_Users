@@ -13,4 +13,8 @@ export const PageButtons = styled.button`
         background: #292929;
         color: #ffffff;
     }
+
+    @media(max-width: 800px){
+        font-size: 0.5em;
+    }
 `;

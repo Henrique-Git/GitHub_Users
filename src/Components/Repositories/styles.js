@@ -16,10 +16,37 @@ export const TableTitle = styled.h1`
     font-weight: bolder;
     text-align: center;
     margin: 1em 0 1.5em 0;
+
+    @media(max-width: 500px){
+        font-size: 1em;
+    }
+
+    @media(min-width: 501px) and (max-width: 800px){
+        font-size: 1.2em;
+    }
+
+    @media(min-width: 801px) and (max-width: 1100px){
+        font-size: 1.5em;
+    }
 `;
 
 export const Table = styled.table`
     font-weight: bold;
+
+    @media(max-width: 500px){
+        width: 90%;
+        font-size: 0.3em;
+    }
+
+    @media(min-width: 501px) and (max-width: 800px){
+        width: 80%;
+        font-size: 0.5em;
+    }
+
+    @media(min-width: 801px) and (max-width: 1100px){
+        width: 80%;
+        font-size: 0.9em;
+    }
 `;
 
 export const TableRow = styled.tr`
@@ -29,6 +56,8 @@ export const TableRow = styled.tr`
     }
 
     td{
+        justify-self: center;
+        align-self: center;
         background: #292929;
         border: 0.1em solid #ffffff;
         padding: 0.7em 3em;

@@ -10,4 +10,8 @@ export const FooterDiv = styled.div`
 
 export const FooterText = styled.p`
     font-size: 0.9em;
+
+    @media(min-width: 320px) and (max-width: 740px){
+        font-size: 0.7em;
+    }
 `;

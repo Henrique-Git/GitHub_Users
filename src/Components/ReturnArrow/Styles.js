@@ -14,4 +14,8 @@ export const ReturnButton = styled.button`
     :hover{
         color: #ffff40;
     }
+
+    @media(max-width: 800px){
+        font-size: 1.3em;
+    }
 `;
