@@ -36,7 +36,7 @@ function Repositories() {
         const data = await res.json();
         setRepos(data);
       }
-    },[]);
+    });
 
     //Função de ordenação do Array obtido como resposta, pelo número de estrelas
     function sortRepositoriesStarsDescendant(elementA, elementB){

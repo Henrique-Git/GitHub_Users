@@ -24,7 +24,7 @@ function RepositoriesDetails(){
           const data = await res.json();
           setDetails(data);
         }
-    },[]);
+    });
 
     return(
         <RepositoriesDetailsDiv>
