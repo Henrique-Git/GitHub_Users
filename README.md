@@ -21,14 +21,19 @@ O projeto consiste em realizar uma busca por um usuário registrado no GitHub e 
 
 <img src='./src/Assets/Readme/SearchUser.png'>
 
+<img src='./src/Assets/Readme/SearchUserResponsive.png'>
+
 É possível também a visualização de uma listagem dos repositórios desse usuário.
 
 <img src='./src/Assets/Readme/Repositories.png'>
+
+<img src='./src/Assets/Readme/RepositoriesResponsive.png'>
 
 E após selecionar o repositório desejado é possível visualizar detalhes sobre o mesmo, ou até mesmo acessá-lo diretamente no repositório do GitHub.
 
 <img src='./src/Assets/Readme/RepositoriesDetails.png'>
 
+<img src='./src/Assets/Readme/RepositoriesDetailsResponsive.png'>
 
 ## Tecnologias Utilizadas 🖥️
 
