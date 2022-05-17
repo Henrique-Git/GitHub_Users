@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Context } from "./Contexts/Context";
 import Footer from "./Components/Footer/Footer";
 import Home from "./Components/Pages/Home/Home";
 import Repositories from "./Components/Pages/Repositories/Repositories";
-import Repositories_Details from "./Components/Pages/Repositories_Details/Repositories_Details";
+import Repositories_Details from "./Components/Pages/Repositories_Details/RepositoriesDetails";
 import "./reset.css"
 import { AppDiv } from "./AppStyles";
 

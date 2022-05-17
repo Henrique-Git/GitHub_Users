@@ -14,7 +14,7 @@ function Home(){
         document.title = "GitHub Users"
 
         setDados(null);
-     }, []);
+     },[]);
 
     //Função assíncrona responsável pela busca dos usuários consultando a API do GitHub 
     async function searchUser(){

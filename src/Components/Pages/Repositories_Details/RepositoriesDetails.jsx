@@ -3,7 +3,7 @@ import { Context } from "../../../Contexts/Context";
 import ReturnArrow from "../../ReturnArrow/ReturnArrow";
 import { RepositoriesDetailsDiv, DataItem, Title, DetailsBox } from "./Styles";
 
-function Repositories_Details(){
+function RepositoriesDetails(){
     //Declaração das constantes a serem utilizadas no componente Repositories_Details
     const {dados} = useContext(Context);
     const {reposName} = useContext(Context);
@@ -43,4 +43,4 @@ function Repositories_Details(){
     );
 }
 
-export default Repositories_Details;
+export default RepositoriesDetails;
