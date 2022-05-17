@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# GitHub Users 💻
+Projeto que utiliza a API do GitHub para localizar usuários buscados, assim como as informações de sua conta e de seus repositórios.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Link de Acesso 🔗
 
-## Available Scripts
+https://users4github.netlify.app
 
-In the project directory, you can run:
+## Clonagem
 
-### `npm start`
+Caso queira utilizar o projeto para estudos ou testes em máquina local, basta efetuar uma clonagem do repositório na máquina desejada utilizando o comando:
+<br><br>
+`git clone https://github.com/Henrique-Git/GitHub_Users`
+<br><br>
+Após abrir o projeto em um editor de código de sua preferência, basta executar o comando `npm install` para que todas as dependências utilizadas no projeto sejam instaladas e o site funcione corretamente.
+<br>
+Para conferir o funcionamento do programa, basta utilizar o comando `npm start`.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Projeto 📄
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+O projeto consiste em realizar uma busca por um usuário registrado no GitHub e receber informações sobre a conta do usuário pesquisado.
 
-### `npm test`
+<img src='./src/Assets/Readme/SearchUser.png'>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+É possível também a visualização de uma listagem dos repositórios desse usuário.
 
-### `npm run build`
+<img src='./src/Assets/Readme/Repositories.png'>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+E após selecionar o repositório desejado é possível visualizar detalhes sobre o mesmo, ou até mesmo acessá-lo diretamente no repositório do GitHub.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<img src='./src/Assets/Readme/RepositoriesDetails.png'>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Tecnologias Utilizadas 🖥️
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<ul>
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>Javascript</li>
+  <li>React.js</li>
+</ul>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Autor 🤓
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<li>Henrique Medeiros</li>
+<br>
+<a href="https://github.com/Henrique-Git" alt="Github" target="_blank">
+  <img src="https://img.shields.io/badge/-Github-black?style=static&labelColor=black&logo=github&logoColor=white&link=https://github.com/Henrique-Git">
+</a>
+<a href="https://www.linkedin.com/in/henrique-neves-medeiros/" alt="LinkedIn" target="_blank">
+  <img src="https://img.shields.io/badge/-Linkedin-blue?style=static&labelColor=blue&logo=linkedin&logoColor=white&link=https://www.linkedin.com/in/henrique-neves-        medeiros/">  
+<a>
