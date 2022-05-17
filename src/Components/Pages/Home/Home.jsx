@@ -12,9 +12,8 @@ function Home(){
     //Mudança do título apresentado na aba da página
     useEffect(() => {
         document.title = "GitHub Users"
-
         setDados(null);
-     });
+     }, [setDados]);
 
     //Função assíncrona responsável pela busca dos usuários consultando a API do GitHub 
     async function searchUser(){
