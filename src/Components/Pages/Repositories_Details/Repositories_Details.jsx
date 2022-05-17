@@ -1,17 +1,21 @@
-import React, {useContext ,useEffect, useState} from 'react';
-import ReturnArrow from "../ReturnArrow/ReturnArrow";
-import { RepositoriesDetailsDiv, DataItem, Title, DetailsBox } from './Styles'
-import { Context } from '../../Contexts/Context';
+import React, {useContext ,useEffect, useState} from "react";
+import { Context } from "../../../Contexts/Context";
+import ReturnArrow from "../../ReturnArrow/ReturnArrow";
+import { RepositoriesDetailsDiv, DataItem, Title, DetailsBox } from "./Styles";
 
 function Repositories_Details(){
+    //Declaração das constantes a serem utilizadas no componente Repositories_Details
     const {dados} = useContext(Context);
     const {reposName} = useContext(Context);
     const [details, setDetails] = useState('');
 
+    //Efeito para carregamento dos detalhes assim que a página for carregada
     useEffect(() => {
+        document.title = "GitHub Repository_Details"
 
         fetchAPI();
-  
+        
+        //Função assíncrona responsável pela requisição à API de Detalhes de Repositórios do GithHub
         async function fetchAPI() {
           const res = await fetch(
             `https://api.github.com/repos/` + reposName 

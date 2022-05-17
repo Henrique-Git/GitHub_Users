@@ -1,14 +1,13 @@
 import styled from "styled-components";
 
-export const Body = styled.section`
-    color: white;
-    font-family: sans-serif;
-    min-height: 95vh;
+export const HomeDiv = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    color: #ffffff;
+    min-height: 95vh;
+  
     @media(min-width: 320px) and (max-width: 740px){
         line-height: 4em;
     }
@@ -27,14 +26,14 @@ export const Title = styled.h1`
 `;
 
 export const Input = styled.input`
+    font-size: 1em;
+    font-weight: bold;
     width: 40vw;
     text-align: center;
     padding: 0.4em;
     margin: 1em;
     border: none;
     border-radius: 0.5em;
-    font-size: 1em;
-    font-weight: bold;
 
     @media(min-width: 320px) and (max-width: 740px){
         width: 80vw;
@@ -42,15 +41,15 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.button`
-    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    color: #292929;
     width: 15vw;
     padding: 0.8em;
-    font-weight: bold;
-    font-size: 1em;
-    border-radius: 1.5em;
     border: none;
-    color: black;
+    border-radius: 1.5em;
     transition: 0.8s ease;
+    cursor: pointer;
     
     @media(min-width: 320px) and (max-width: 740px){
         font-size: 0.8em;
@@ -81,8 +80,8 @@ export const UserData = styled.div`
 `;
 
 export const AvatarImage = styled.img`
-    border-radius: 100%;
     width: 30%;
+    border-radius: 100%;
 
     @media(min-width: 320px) and (max-width: 500px){
         width: 80%;
@@ -117,19 +116,19 @@ export const DivData = styled.ul`
 `;
 
 export const DataItem = styled.li`
-    line-height: 2.5em;
     font-weight: bold;
+    line-height: 2.5em;
     list-style: circle;
 `;
 
 export const ReposButton = styled.button`
-    padding: 0.4em;
-    border: none;
-    border-radius: 0.5em;
     font-size: 1em;
     font-weight: bold;
     width: 100%;
+    padding: 0.4em;
     margin: 1em 0;
+    border: none;
+    border-radius: 0.5em;
     cursor: pointer;
 `;
 

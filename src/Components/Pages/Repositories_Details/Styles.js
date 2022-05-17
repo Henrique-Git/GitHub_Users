@@ -28,36 +28,36 @@ export const Title = styled.h1`
 `;
 
 export const DetailsBox = styled.ul`
-    border: 0.1em solid white;
-    border-radius: 1em;
+    background: #292929;
+    font-size: 1.3em;
+    text-align: justify;
     padding: 2em;
     margin-bottom: 1em;
-    font-size: 1.3em;
     max-width: 70%;
-    text-align: justify;
-    background: #292929;
+    border: 0.1em solid #ffffff;
+    border-radius: 1em;
 
     @media(max-width: 500px){
-        width: 80%;
         font-size: 0.5em;
         text-align: left;
+        width: 80%;
     }
 
     @media(min-width: 501px) and (max-width: 800px){
-        width: 80%;
         font-size: 0.8em;
         text-align: left;
+        width: 80%;
     }
 
     @media(min-width: 801px) and (max-width: 1100px){
-        width: 80%;
         font-size: 1.1em;
+        width: 80%;
     }
 `;
 
 export const DataItem = styled.li`
-    line-height: 3em;
     font-weight: bold;
+    line-height: 3em;
     list-style: circle;
 
     span{

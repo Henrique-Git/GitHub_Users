@@ -1,19 +1,22 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
-import { AvatarImage, Body, Button, DataItem, DivData, Input, NoInformation, ReposButton, Title, UserData } from "./Styles";
-import { Context } from '../../Contexts/Context'
+import { Context } from "../../../Contexts/Context";
+import { AvatarImage, Button, DataItem, DivData, HomeDiv, Input, NoInformation, ReposButton, Title, UserData } from "./Styles";
 
 function Home(){
+    //Declaração das constantes a serem utilizadas no componente Home
     const {dados, setDados} = useContext(Context)
     const [inputField, setInputField] = useState(null);
-
+    
+    //Mudança do título apresentado na aba da página
     useEffect(() => {
-        document.title = "GitHub Buscar Usuários"
+        document.title = "GitHub Users"
 
         setDados(null);
      }, []);
 
+    //Função assíncrona responsável pela busca dos usuários consultando a API do GitHub 
     async function searchUser(){
         const userSearched = await inputField;
 
@@ -35,6 +38,7 @@ function Home(){
             }
     }
 
+    //Função assíncrona responável pela busca dos usuário ao ser apertada a tecla ENTER
     async function searchUserEnter(e){
         if(e.keyCode === 13){
           const userSearched = await inputField;
@@ -58,12 +62,14 @@ function Home(){
         }
     }
 
+    //Função responsável por armazenar o valor do input na constante inputField
     function setInput(e){
         if(e.target.value !== null){
             setInputField(e.target.value);
         }
     }
 
+    //Função responsável pela apresentação dos resultados da requisição na tela
     function showData(){
         if(inputField !== null && (dados !== null && dados !== '')){
             return( 
@@ -95,7 +101,7 @@ function Home(){
     }
 
     return(
-        <Body>
+        <HomeDiv>
             <Title><FaGithub /> GitHub Users</Title>
 
             <Input placeholder="Digite aqui um usuário" type="text" onKeyDown={(e) => searchUserEnter(e)} onInput={(e) => setInput(e)} />
@@ -103,7 +109,7 @@ function Home(){
             <Button onClick={searchUser}>Buscar</Button>
 
             {showData()}
-        </Body> 
+        </HomeDiv> 
     );
 }
 

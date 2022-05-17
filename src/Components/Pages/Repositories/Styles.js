@@ -5,9 +5,8 @@ export const RepositoriesDiv = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #ffffff;
-    text-align: center;    
-    font-family: sans-serif;
+    text-align: center;
+    color: #ffffff;    
     min-height: 95vh;
 `;
 
@@ -34,34 +33,32 @@ export const Table = styled.table`
     font-weight: bold;
 
     @media(max-width: 500px){
-        width: 90%;
         font-size: 0.3em;
+        width: 90%;
     }
 
     @media(min-width: 501px) and (max-width: 800px){
-        width: 80%;
         font-size: 0.5em;
+        width: 80%;
     }
 
     @media(min-width: 801px) and (max-width: 1100px){
-        width: 80%;
         font-size: 0.9em;
+        width: 80%;
     }
 `;
 
 export const TableRow = styled.tr`
     th{
-        padding-bottom: 0.5em;
         font-size: 1.1em;
+        padding-bottom: 0.5em;
     }
 
     td{
-        justify-self: center;
-        align-self: center;
         background: #292929;
-        border: 0.1em solid #ffffff;
-        padding: 0.7em 3em;
         text-align: justify;
+        padding: 0.7em 3em;
+        border: 0.1em solid #ffffff;
     }
 `;
 
@@ -75,12 +72,12 @@ export const LinkGit = styled.p`
 `;
 
 export const DetailsButton = styled.button`
-    cursor: pointer;
     font-size: 0.9em;
     font-weight: bold;
+    padding: 0.3em 1em;
     border: none;
     border-radius: 1em;
-    padding: 0.3em 1em;
+    cursor: pointer;
 
     :hover{
         background: #292929;

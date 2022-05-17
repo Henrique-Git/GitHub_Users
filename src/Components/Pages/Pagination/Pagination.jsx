@@ -6,7 +6,9 @@ function Pagination({pages, setCurrentPage}){
         <div>
             {Array.from(Array(pages), (repo, index) => {
                 return (
-                <PageButtons value={index} onClick={(e) => setCurrentPage(Number(e.target.value))}>{index + 1}</PageButtons>
+                    <PageButtons value={index} onClick={(e) => setCurrentPage(Number(e.target.value))}>
+                        {index + 1}
+                    </PageButtons>
                 )
             })}
         </div>
