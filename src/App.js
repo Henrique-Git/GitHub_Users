@@ -4,7 +4,7 @@ import { Context } from "./Contexts/Context";
 import Footer from "./Components/Footer/Footer";
 import Home from "./Components/Pages/Home/Home";
 import Repositories from "./Components/Pages/Repositories/Repositories";
-import Repositories_Details from "./Components/Pages/Repositories_Details/RepositoriesDetails";
+import RepositoriesDetails from "./Components/Pages/RepositoriesDetails/RepositoriesDetails";
 import "./reset.css"
 import { AppDiv } from "./AppStyles";
 
@@ -21,7 +21,7 @@ function App() {
             <Routes>
               <Route path='/' element={<Home />} exact />
               <Route path='/userRepositories/:username' element={<Repositories />} />
-              <Route path='/userRepositories/:username/:repository' element={<Repositories_Details />} />
+              <Route path='/userRepositories/:username/:repository' element={<RepositoriesDetails />} />
             </Routes>
             <Footer />
           </Context.Provider>
